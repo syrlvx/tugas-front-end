@@ -1,0 +1,369 @@
+body {
+    background-color: #f8f9fa;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: #bcdb1d;/* Warna latar belakang navbar */
+    background: linear-gradient(90deg, #e654e6 0%, #ff503ce0 100%);
+    border-bottom: 2px solid #ff3300c0;
+    margin-bottom: 0px;
+        /* Jarak di bawah navbar */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff;
+    /* Warna teks untuk brand */
+    font-weight: bold;
+    /* Menebalkan teks brand */
+}
+
+/* Navbar Styles */
+.navbar .nav-link {
+    color: #ffffff;
+    /* Warna teks default */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Transisi halus untuk transformasi */
+}
+
+.navbar .nav-link:hover {
+    color: #2cffce;
+    /* Warna teks saat hover */
+    transform: scale(1.1);
+    /* Membesarkan teks saat hover */
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+    /* Border toggler */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Mengubah ikon toggler menjadi putih */
+}
+
+/* Navbar Dropdown */
+.navbar .dropdown-menu {
+    background-color: #343a40;
+    /* Warna latar belakang dropdown */
+}
+
+.navbar .dropdown-item {
+    color: #ffffff;
+    /* Warna teks untuk item dropdown */
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #007bff;
+    /* Warna latar belakang saat hover */
+    color: #ffffff;
+    /* Warna teks saat hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px;
+        /* Padding untuk tampilan mobile */
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.5rem;
+        /* Ukuran font brand untuk mobile */
+    }
+}
+
+h1 {
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.hero {
+    background: none;
+        /* Remove any background color or gradient */
+    position: relative;
+    margin-top: 0;
+    padding-top: 60px;
+    height: 100vh;
+    /* Tinggi penuh dari viewport */
+    overflow: hidden;
+    padding-top: 60px;
+    /* Memberikan ruang di bagian atas */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    top: 50%;
+    /* Menggeser konten ke tengah */
+    transform: translateY(-50%);
+    /* Menyelaraskan konten ke tengah vertikal */
+    text-align: center;
+    /* Menyelaraskan teks ke tengah */
+}
+
+/* Ensure there's enough padding below the hero section */
+#trends {
+    padding-top: 60px;
+    /* Space to prevent overlap from navbar */
+    padding-bottom: 100px;
+    /* Space to separate from the hero section */
+}
+
+/* Featured Articles Card Hover Effect */
+.card {
+    border-color: #ff69b4;
+        /* Match border color */
+    transition: transform 0.3s ease;
+    /* Smooth transition for scaling */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Scale up card on hover */
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+/* Optional: Shadow effect on hover */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Add shadow on hover */
+}
+
+/* Gallery Image Styles */
+.gallery img {
+    height: 200px;
+    /* Tentukan tinggi tetap untuk gambar */
+    width: 100%;
+    /* Pastikan gambar mengisi lebar kolom */
+    object-fit: cover;
+    /* Pastikan gambar terpotong dan tetap menjaga aspek rasio */
+}
+@media (max-width: 768px) {
+    #gallery img {
+        height: 150px; /* Adjust height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    #gallery img {
+        height: 100px; /* Adjust height for mobile devices */
+    }
+}
+/* Hover effect for images */
+.img-fluid {
+    transition: transform 0.3s ease;
+    /* Smooth transition */
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+    /* Scale the image up */
+}
+
+/* Hover effect for card buttons */
+.card .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.card .btn:hover {
+    background-color: #ff69b4;
+    /* Change background color on hover */
+    color: #2cffce;
+    /* Change text color on hover */
+}
+
+/* Hover effect for other links/buttons */
+.nav-link:hover,
+.btn:hover {
+    color: #2cffce;
+    /* Change link color on hover */
+}
+.btn-primary {
+    background-color: #ff69b4;
+    /* Pink background */
+    border-color: #ff69b4;
+    /* Match border color */
+}
+
+.btn-primary:hover {
+    background-color: #ff3ea5;
+    /* Darker pink on hover */
+    border-color: #ff1493;
+    /* Match border color on hover */
+}
+
+.btn-outline-primary {
+    border-color: #ff69b4;
+    /* Match border color */
+    color: #ff69b4;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ff3ea5;
+    border-color: #ff69b4;
+    /* Match border color */
+}
+
+#testimonials {
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+    padding: 60px 20px;
+    /* Padding for top and bottom */
+    border-radius: 8px;
+    /* Rounded corners for the section */
+}
+
+#testimonials h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    /* Add space between heading and testimonials */
+}
+
+#testimonials .blockquote {
+    background-color: #ffffff;
+    /* Background for each quote */
+    padding: 30px;
+    margin: 10px 0;
+    /* Vertical space between quotes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition */
+    color: #555;
+}
+
+#testimonials .blockquote:hover {
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* More pronounced shadow on hover */
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+#testimonials .blockquote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    /* Space between quote text and footer */
+}
+
+#testimonials .blockquote-footer {
+    font-size: 1rem;
+    color: #888;
+    font-weight: 500;
+}
+
+#testimonials .row .col-md-4 {
+    margin-bottom: 30px;
+    /* Space between columns on smaller screens */
+}
+
+@media (min-width: 768px) {
+    #testimonials .row .col-md-4 {
+        margin-bottom: 0;
+        /* Remove extra space for larger screens */
+    }
+}
+#about {
+    padding-top: 15px;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 60px;
+}
+
+/* Contact Form Styles */
+.form-label {
+    font-weight: bold;
+    /* Make labels bold */
+}
+
+.btn-primary {
+    background-color: #ff69b4;
+    /* Custom primary button color */
+    border-color: #ff69b4;
+    /* Match border color */
+}
+
+.btn-primary:hover {
+    background-color: #ff3ea5;
+    /* Darker pink on hover */
+    border-color: #ff1493;
+    /* Match border color on hover */
+}
+
+footer {
+    background-color: #ffffff !important;
+    /* Ensure the background is white */
+    background: linear-gradient(90deg, #ff503ce0 0%, #e654e6 100%);
+    border-bottom: 2px solid #ff3300c0;
+    padding: 3px 0;/* Mengurangi padding atas dan bawah */
+    color: #ffffff !important;
+    /* Force the text color to white */
+    border-top: 2px solid #ff3300c0;
+    /* Optional: top border */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffffff !important;
+    /* Ensure links in the footer are white as well */
+}
+.social-icons a {
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff69b4;
+    text-shadow: 0 0 8px #2cffce, 0 0 15px rgb(0, 255, 179);
+}
+
+/* Styles for the sticky navbar */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Pastikan navbar berada di atas konten lainnya */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Efek transisi untuk perubahan warna latar belakang dan bayangan */
+}
+
+.sticky-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Warna latar belakang saat di-scroll */
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
+    /* Tambahkan bayangan untuk efek lebih jelas */
+}
