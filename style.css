@@ -4,10 +4,7 @@ body {
 /* Navbar Styles */
 .navbar {
     background-color: #bcdb1d;/* Warna latar belakang navbar */
-    background: linear-gradient(90deg, #e654e6 0%, #ff503ce0 100%);
-    border-bottom: 2px solid #ff3300c0;
-    margin-bottom: 0px;
-        /* Jarak di bawah navbar */
+    background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 .navbar .navbar-brand {
@@ -19,17 +16,33 @@ body {
 
 /* Navbar Styles */
 .navbar .nav-link {
-    color: #ffffff;
-    /* Warna teks default */
-    transition: transform 0.3s ease, color 0.3s ease;
-    /* Transisi halus untuk transformasi */
+    color: #ffffff !important;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link.active::after{
+    color: #effffb;
+    width: 60%;
 }
 
 .navbar .nav-link:hover {
-    color: #2cffce;
-    /* Warna teks saat hover */
+    color: #effffb;
     transform: scale(1.1);
-    /* Membesarkan teks saat hover */
 }
 
 /* Navbar Toggler */
@@ -40,25 +53,20 @@ body {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    /* Mengubah ikon toggler menjadi putih */
 }
 
 /* Navbar Dropdown */
 .navbar .dropdown-menu {
     background-color: #343a40;
-    /* Warna latar belakang dropdown */
 }
 
 .navbar .dropdown-item {
     color: #ffffff;
-    /* Warna teks untuk item dropdown */
 }
 
 .navbar .dropdown-item:hover {
     background-color: #007bff;
-    /* Warna latar belakang saat hover */
     color: #ffffff;
-    /* Warna teks saat hover */
 }
 
 /* Responsive Styles */
@@ -88,15 +96,11 @@ h4 {
 
 .hero {
     background: none;
-        /* Remove any background color or gradient */
     position: relative;
-    margin-top: 0;
-    padding-top: 60px;
+    margin-top: -1.8px;
     height: 100vh;
-    /* Tinggi penuh dari viewport */
     overflow: hidden;
     padding-top: 60px;
-    /* Memberikan ruang di bagian atas */
 }
 
 .hero-video {
@@ -115,24 +119,37 @@ h4 {
     color: rgb(255, 255, 255);
     padding: 20px;
     top: 50%;
-    /* Menggeser konten ke tengah */
     transform: translateY(-50%);
-    /* Menyelaraskan konten ke tengah vertikal */
     text-align: center;
-    /* Menyelaraskan teks ke tengah */
 }
 
-/* Ensure there's enough padding below the hero section */
+.modal-content {
+    background: #fff;
+    border-radius: 20px;
+    border: none;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #trends {
     padding-top: 60px;
-    /* Space to prevent overlap from navbar */
     padding-bottom: 100px;
-    /* Space to separate from the hero section */
 }
 
 /* Featured Articles Card Hover Effect */
 .card {
-    border-color: #ff69b4;
+    border-color: #fda085;
         /* Match border color */
     transition: transform 0.3s ease;
     /* Smooth transition for scaling */
@@ -171,6 +188,11 @@ h4 {
         height: 100px; /* Adjust height for mobile devices */
     }
 }
+.col-md-3 h5{
+    margin-top: 10px;
+        text-align: center;
+}
+
 /* Hover effect for images */
 .img-fluid {
     transition: transform 0.3s ease;
@@ -189,41 +211,42 @@ h4 {
 }
 
 .card .btn:hover {
-    background-color: #ff69b4;
+    background-color: #fda085;
     /* Change background color on hover */
-    color: #2cffce;
+    color: #ffffff;
     /* Change text color on hover */
 }
 
 /* Hover effect for other links/buttons */
 .nav-link:hover,
 .btn:hover {
-    color: #2cffce;
+    color: white;
     /* Change link color on hover */
 }
 .btn-primary {
-    background-color: #ff69b4;
+    background-color: #fda085;
     /* Pink background */
-    border-color: #ff69b4;
+    border-color: #fda085;
     /* Match border color */
+    font-weight: bold;
 }
 
 .btn-primary:hover {
-    background-color: #ff3ea5;
+    background-color: #ffdfae;
     /* Darker pink on hover */
-    border-color: #ff1493;
+    border-color: #ffdfae;
     /* Match border color on hover */
 }
 
 .btn-outline-primary {
-    border-color: #ff69b4;
+    border-color: #fda085;
     /* Match border color */
-    color: #ff69b4;
+    color: #fda085;
 }
 
 .btn-outline-primary:hover {
-    background-color: #ff3ea5;
-    border-color: #ff69b4;
+    background-color: #ffdfae;
+    border-color: #fda085;
     /* Match border color */
 }
 
@@ -308,29 +331,26 @@ h4 {
 }
 
 .btn-primary {
-    background-color: #ff69b4;
+    background-color: #ff9c55;
     /* Custom primary button color */
-    border-color: #ff69b4;
+    border-color: #fda085;
     /* Match border color */
 }
 
 .btn-primary:hover {
-    background-color: #ff3ea5;
+    background-color: #ffbb8b;
     /* Darker pink on hover */
-    border-color: #ff1493;
+    border-color: #ffac71;
     /* Match border color on hover */
 }
 
 footer {
     background-color: #ffffff !important;
-    /* Ensure the background is white */
-    background: linear-gradient(90deg, #ff503ce0 0%, #e654e6 100%);
-    border-bottom: 2px solid #ff3300c0;
-    padding: 3px 0;/* Mengurangi padding atas dan bawah */
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    padding: 2px 0;
     color: #ffffff !important;
-    /* Force the text color to white */
-    border-top: 2px solid #ff3300c0;
-    /* Optional: top border */
+    font-weight: 500;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
     position: relative;
     bottom: 0;
     width: 100%;
@@ -347,8 +367,8 @@ footer a {
 }
 
 .social-icons a:hover {
-    color: #ff69b4;
-    text-shadow: 0 0 8px #2cffce, 0 0 15px rgb(0, 255, 179);
+    color: #fda085;
+    text-shadow: 0 0 8px #f4fffc, 0 0 15px rgb(0, 255, 179);
 }
 
 /* Styles for the sticky navbar */
