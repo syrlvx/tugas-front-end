@@ -188,9 +188,22 @@ h4 {
         height: 100px; /* Adjust height for mobile devices */
     }
 }
-.col-md-3 h5{
-    margin-top: 10px;
-        text-align: center;
+/* =======================================
+   PERBAIKAN STYLE REFERENCE (ANTI-MIRING)
+   ======================================= */
+#gallery h5 {
+    margin-top: 15px;
+    text-align: center;
+
+    /* Ini kode untuk bikin tingginya SAMA */
+    line-height: 1.25em;
+    min-height: 2.5em;
+    /* Paksa tingginya minimal 2 baris */
+
+    /* Ini kode untuk menengahkan judul yang 1 baris */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Hover effect for images */
@@ -314,6 +327,37 @@ h4 {
         /* Remove extra space for larger screens */
     }
 }
+
+/* ... di dalam @media (max-width: 768px) ... */
+
+.hero {
+    /* Hapus kode 'aspect-ratio' dan 'height: auto' dari sebelumnya */
+
+    /* 1. Kembalikan ke tinggi minimal.
+       Ini memberi ruang agar video terlihat. */
+    min-height: 60vh;
+
+    /* 2. Biarkan tinggi bisa 'tumbuh' jika kontennya panjang */
+    height: auto;
+
+    /* 3. INI KUNCI BARUNYA:
+       Kita ubah 'hero' jadi flexbox untuk menengahkan
+       konten dengan cara yang lebih aman. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kita juga perlu perbaiki 'hero-content' */
+.hero-content {
+    /* Hapus metode 'top: 50%' yang bikin kepotong */
+    top: auto;
+    transform: none;
+
+    /* Beri sedikit padding agar teks tidak mepet */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 #about {
     padding-top: 15px;
     text-align: center;
@@ -386,4 +430,64 @@ footer a {
     /* Warna latar belakang saat di-scroll */
     box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
     /* Tambahkan bayangan untuk efek lebih jelas */
+}
+
+/* ====================================================
+   PERBAIKAN NAVBAR MOBILE (MENU HAMBURGER) - VERSI 2
+   Gantikan blok @media lama Anda dengan yang ini
+   ==================================================== */
+
+/* Ini adalah breakpoint 'lg' Bootstrap (991.98px). 
+   Aturan ini hanya berlaku saat menu menjadi hamburger. */
+@media (max-width: 991.98px) {
+
+    /* 1. BUAT RATA TENGAH (FIX UNTUK "MIRING")
+          Ini akan membuat 'Home', 'About', 'Contact', 
+          dan 'Subscribe' jadi rata tengah. */
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    /* 2. KEMBALIKAN GARIS & ATUR AGAR TIDAK NABRAK
+          Kita tidak pakai 'display: none' lagi. */
+    .navbar .nav-link::after {
+        display: block;
+        /* Pastikan garisnya tampil */
+    }
+
+    /* 3. UBAH POSISI GARIS AKTIF (BIAR TIDAK NABRAK) */
+    .navbar .nav-link.active::after {
+        /* Ini yang penting: 
+           Pindahkan garisnya dari 'bottom: -5px' (di luar)
+           menjadi 'bottom: 2px' (sedikit di dalam link) 
+           agar tidak nabrak tombol di bawahnya. */
+        bottom: 2px;
+
+        /* Kode ini memastikan garisnya tetap di tengah link */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        /* Pastikan lebarnya tetap */
+    }
+
+    /* 4. Beri jarak yang konsisten antar item menu */
+    .navbar-nav .nav-item {
+        margin-bottom: 15px;
+        /* Jarak antar 'Home', 'About', 'Contact' */
+    }
+
+    /* 5. Perbaiki posisi tombol "Subscribe" */
+    .navbar-nav .nav-item.ms-3 {
+        margin-left: 0 !important;
+        /* Hapus margin kiri (ms-3) dari desktop */
+        margin-top: 10px;
+        /* Kasih jarak sedikit dari 'Contact' */
+        margin-bottom: 0;
+        /* Hapus margin bawah di item terakhir */
+    }
+
+    /* 6. Hapus margin ganda di tombol (opsional tapi rapi) */
+    .navbar-nav .btn.ms-3 {
+        margin-left: 0 !important;
+    }
 }
